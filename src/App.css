@@ -1,0 +1,95 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.divStyle{
+  display: flex;
+  flex-direction: row;
+}
+.firstRow{
+  width: 5em;
+  /* background-color: aqua; */
+  /* height: auto; */
+}
+.columOnly{
+  /* background-color: red; */
+  display: flex;
+  /* flex-direction: column; */
+}
+.SecondRow{
+  display: flex;
+  flex-direction: column;
+  /* background-color: aqua; */
+  width: 50em;
+  margin-top: 6em;
+  margin-left: 3em;
+  /* height: auto; */
+}
+.ThirdRow{
+  width: 40em;
+  background-color: #F5F5F5;
+  border-radius: 35px;
+  margin-top: 6em;
+  /* margin-bottom: 6em; */
+}
+.block{
+  width: 45em;
+  height: 15em;
+  background-color: red;
+  border-radius: 35px;
+  background-image: url("./abstract-orange-gradient-illustration-background-260nw-404809534.webp");
+}
+
+.blockSlider{
+  margin-top: 1em;
+  width: 45em;
+  height: 15em;
+  background-color: white;
+  border-radius: 2em;
+  margin-bottom: 4em;
+}
+
+.data{
+  width: 45em;
+  height: 15em;
+  background-color: red;
+  border-radius: 35px;
+  /* background-image: url("./abstract-orange-gradient-illustration-background-260nw-404809534.webp"); */
+  background-image: url("./nightraid_power_gif.gif");
+  /* width: 4em; */
+}

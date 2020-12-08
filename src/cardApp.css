@@ -1,0 +1,12 @@
+    .root {
+      height: "8em";
+      width: "14em";
+      border-radius: "25px";
+      margin-right:  "1em";
+      margin-top: "1em";
+
+    }
+    .title {
+      font-size: 24;
+      margin-right: 50;
+    }

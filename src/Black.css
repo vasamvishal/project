@@ -1,0 +1,27 @@
+ul.headerExample{
+
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  flex-direction: column;
+  padding-inline-start: 0em;
+}
+
+ul.headerExample li a {
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    font-size: 1em;
+    padding: 1em 2em 1.5em 2em;
+}
+
+
+.active {
+    background: rgba(255, 255, 255, 0.3)
+  }
+
+  .disabled {
+    pointer-events:none;
+    opacity:0.6;         
+}
