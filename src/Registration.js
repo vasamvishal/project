@@ -8,10 +8,7 @@ import TextField from "@material-ui/core/TextField";
 import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import Loader from "react-loader-spinner";
-// import { registerPage, intialState } from "../../../redux/action/RegistrationAction";
 import { checkForNameValidation } from "./formValidation";
-import styles from "./Registration.css";
-// import { connect } from "react-redux";
 import UserSucessfulRegistration from "./UserSucessfulRegistration";
 
 class Registration extends React.PureComponent {
@@ -328,7 +325,6 @@ class Registration extends React.PureComponent {
               <div
                 style={{
                   textAlign: "center",
-                  //   border: "2px solid bred";
                   border: "2px solid red",
                   backgroundColor: "bisque",
                   height: "auto",

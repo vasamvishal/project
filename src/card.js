@@ -1,9 +1,6 @@
-import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import React from "react";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Switch from "@material-ui/core/Switch";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -15,19 +12,24 @@ export default class SimpleCard extends React.Component {
     super(props);
     this.state = {
       checked: true,
+      props: [],
     };
-    console.log(props.color, "props");
   }
-  //   backgroundColor = this.props.color;
+
   Change = (props) => {
     console.log(props, "rrrrr");
     console.log(this.state.checked);
-    this.props.onSelectLanguage(props);
-    this.setState({ checked: !this.state.checked })
+    if (this.state.checked === false) {
+      this.props.onSelectLanguage({});
+    } else {
+      this.props.onSelectLanguage(props);
+    }
+    this.setState({ checked: !this.state.checked });
   };
   render() {
     console.log(backgroundColor, "color");
     console.log(this.state.checked, "checked");
+    console.log("props", this.state.props);
     const value = !this.state.checked
       ? {
           backgroundColor: this.props.color,
@@ -49,15 +51,15 @@ export default class SimpleCard extends React.Component {
     return (
       <Card style={value}>
         <CardContent>
-          {/* {props.openClose} */}
-          <div style={{ display: "flex" ,marginLeft:"-13px"}}>
+          <div style={{ display: "flex", marginLeft: "-13px" }}>
             <FormControlLabel
               value="start"
               control={
                 <Switch
+                  disabled={this.state.props.length > 0}
                   style={
                     !this.state.checked
-                      ? { color: this.props.color }
+                      ? { color: this.props.color}
                       : { color: "white" }
                   }
                 />
@@ -70,9 +72,7 @@ export default class SimpleCard extends React.Component {
               labelPlacement="start"
             />
           </div>
-          {/* <Typography className={classes.pos} color="textSecondary"> */}
           <div>{this.props.icons}</div>
-          {/* </Typography> */}
           <Typography variant="body2" component="p">
             {this.props.name}
             <br />

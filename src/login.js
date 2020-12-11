@@ -2,22 +2,8 @@ import React from "react";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import TextField from "material-ui/TextField";
 import "./login.css";
-// import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
 import Registration from "./Registration";
-import Dialogue from "./Dialogue";
-import CloseOutlinedIcon from "@material-ui/icons/CloseOutlined";
 import BrowserService from "./BrowserService";
-
-import { AlertAddAlert } from "material-ui/svg-icons";
-// import {
-//   login,
-//   loginFailure,
-//   LOGINFAILURE,
-//   loginSucess,
-//   LOGINSUCESS,
-//   setInitialState,
-// } from "../../../redux/action/LoginAction";
 
 class Login extends React.PureComponent {
   didMount = false;
@@ -46,18 +32,6 @@ class Login extends React.PureComponent {
     this.setState({ show: !this.state.show });
   };
 
-  componentDidMount() {
-    // this.props.setInitialState();
-  }
-
-  componentDidUpdate(prevProps) {
-    console.log(prevProps, "prevProps");
-    if (prevProps.status === 400 && this.didMount === false) {
-      this.didMount = true;
-      //   this.setState({ error: this.props.status });
-    }
-  }
-
   userName = (e) => {
     this.setState({ userName: e.target.value });
   };
@@ -78,14 +52,10 @@ class Login extends React.PureComponent {
     let userName = this.state.userName;
     let password = this.state.password;
     let item = { userName, password };
-    // const value =
-    // console.log(value,"value");
     this.login(item).then((response) => {
       console.log(response.status, "status");
       this.setState({ error: response.status }, () => {
         if (this.state.error === 200) {
-          //   this.props.onClose();
-        //   alert("Done")
         this.setState({book:true})
         }
       });
@@ -110,7 +80,6 @@ class Login extends React.PureComponent {
             BrowserService.setLocalStorageValue("token", pair[1]);
           }
         }
-        // console.log(response.text(),"response");
         let responseText = response.text();
         return [responseText, response];
       })
@@ -127,7 +96,6 @@ class Login extends React.PureComponent {
   };
 
   render() {
-    //   console.log(styles,"styles");
     if(this.state.book){
         BrowserService.changeLocation("/home")
     }
@@ -142,16 +110,8 @@ class Login extends React.PureComponent {
     return (
       <React.Fragment>
         <div className="flex">
-          {/* <div className={styles.leftarticle}>
-            <h2 style={{ color: "white", marginTop: "69%", marginLeft: "2em" }}>
-              XBAY&nbsp;&nbsp;&nbsp;&nbsp;
-            </h2>
-          </div> */}
           <div className="rightarticle">
             <MuiThemeProvider>
-              {/* <h3 className="companyname">
-                <CloseOutlinedIcon onClick={this.back} />
-              </h3> */}
               <div className="loginbutton">
                 <div className="logo">Log&nbsp;In</div>
                 <TextField

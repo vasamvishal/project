@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { CircleSlider } from "react-circle-slider";
  
 export default class SliderCircle extends React.Component {
@@ -10,13 +9,8 @@ export default class SliderCircle extends React.Component {
  
     handleChange = value => {
         console.log(`Changed value ${value}`);
+        this.props.temperatureValue(value);
         this.setState({ value });
-    };
- 
-    handleChangeRange = event => {
-        this.setState({
-            value: event.target.valueAsNumber,
-        });
     };
  
     render() {

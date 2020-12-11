@@ -1,16 +1,14 @@
 import React from "react";
-import Avatar from "@material-ui/core/Avatar";
 import KitchenIcon from "@material-ui/icons/Kitchen";
 import RouterIcon from "@material-ui/icons/Router";
 import AlbumIcon from "@material-ui/icons/Album";
-import "./Black.css"
-import HomeIcon from '@material-ui/icons/Home';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import BrowserService from "./BrowserService"
+import "./Black.css";
+import HomeIcon from "@material-ui/icons/Home";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import BrowserService from "./BrowserService";
 
 import EmojiObjectsIcon from "@material-ui/icons/EmojiObjects";
-// let item = ["Fool", "Det", "fff"];
-import {NavLink, withRouter } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 export default function Black() {
   return (
@@ -22,52 +20,65 @@ export default function Black() {
             aboutProps: "headerIcon",
           }}
         >
-          <HomeIcon size="large"/>
+          <HomeIcon size="large" />
         </NavLink>
       </li>
       <li class="disabled">
-      <NavLink
+        <NavLink
           to={{
             pathname: "/none",
             aboutProps: "headerIcon",
           }}
         >
-          <RouterIcon size="large"/>
+          <RouterIcon size="large" />
         </NavLink>
       </li>
-      <li class="disabled"><NavLink
+      <li class="disabled">
+        <NavLink
           to={{
             pathname: "/about",
             aboutProps: "headerIcon",
           }}
         >
-          <AlbumIcon size="large"/>
-        </NavLink></li>
+          <AlbumIcon size="large" />
+        </NavLink>
+      </li>
 
-        <li class="disabled"><NavLink
+      <li class="disabled">
+        <NavLink
           to={{
             pathname: "/about",
             aboutProps: "headerIcon",
           }}
         >
-          <KitchenIcon size="large"/>
-        </NavLink></li>
-        <li class="disabled"><NavLink
+          <KitchenIcon size="large" />
+        </NavLink>
+      </li>
+      <li class="disabled">
+        <NavLink
           to={{
             pathname: "/about",
             aboutProps: "headerIcon",
           }}
         >
-          <EmojiObjectsIcon size="large"/>
-        </NavLink></li>
-        <li style={{cursor:"none"}}><NavLink
+          <EmojiObjectsIcon size="large" />
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
           to={{
             pathname: "/",
             aboutProps: "headerIcon",
           }}
         >
-          <ExitToAppIcon size="large" onClick={()=>{BrowserService.deleteLocalStorageItem("user")}}/>
-        </NavLink></li>
+          <ExitToAppIcon
+            size="large"
+            onClick={() => {
+              BrowserService.deleteLocalStorageItem("user");
+            }}
+          />
+        </NavLink>
+      </li>
     </ul>
   );
 }
